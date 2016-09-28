@@ -1,11 +1,24 @@
 package br.com.unicamp.inf321.models.bookstore;
 
 import org.graphwalker.core.machine.ExecutionContext;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.unicamp.inf321.ModeloCompleto;
+import io.appium.java_client.android.AndroidDriver;
 
 public class BookstoreModel extends ExecutionContext implements ModeloCompleto{
 
+	private AndroidDriver<WebElement> driver;
+	private WebDriverWait wait;
+	
+	public BookstoreModel(AndroidDriver<WebElement> driver) {
+		super();
+		this.driver = driver;
+		wait = new WebDriverWait(driver, 30);
+	}
+
+	
 	@Override
 	public void e_finalizarComBoleto() {
 		// TODO Auto-generated method stub
