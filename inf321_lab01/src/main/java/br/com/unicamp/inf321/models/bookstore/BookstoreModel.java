@@ -11,6 +11,9 @@ public class BookstoreModel extends ExecutionContext implements ModeloCompleto{
 
 	private AndroidDriver<WebElement> driver;
 	private WebDriverWait wait;
+
+	public BookstoreModel() {
+	}
 	
 	public BookstoreModel(AndroidDriver<WebElement> driver) {
 		super();
