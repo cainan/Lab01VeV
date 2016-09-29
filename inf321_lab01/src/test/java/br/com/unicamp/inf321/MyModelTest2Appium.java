@@ -90,7 +90,7 @@ public class MyModelTest2Appium {
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "6.0");
 		capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-		capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.marvelapp.project");
+		capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.marvelapp.project860015");
 		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".BookstoreActivity");
 		capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, "true");
 		capabilities.setCapability(AndroidMobileCapabilityType.UNICODE_KEYBOARD, "true"); //disable soft keyboard
