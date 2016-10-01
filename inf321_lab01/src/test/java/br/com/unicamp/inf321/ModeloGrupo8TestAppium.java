@@ -99,7 +99,7 @@ public class ModeloGrupo8TestAppium {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		driver.rotate(ScreenOrientation.PORTRAIT); //rotaciona tela
+		driver.rotate(ScreenOrientation.LANDSCAPE); //rotaciona tela
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //seta timeout implicito (sempre vai esperar no minimo 5 segundos pelo elemento na tela)
 	}
 
