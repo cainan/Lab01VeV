@@ -44,8 +44,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class MyModelTest2Appium {
-	public final static Path MODEL_PATH = Paths.get("/br/com/unicamp/inf321/ModeloCompleto.graphml");
+public class ModeloGrupo8TestAppium {
+	public final static Path MODEL_PATH = Paths.get("/br/com/unicamp/inf321/ModeloGrupo8.graphml");
 	private static AndroidDriver<WebElement> driver;
 	private Observer observer;
 	private Graph graph;
@@ -61,7 +61,7 @@ public class MyModelTest2Appium {
 		driver.resetApp();
 		// cria observer para habilitar execução do modelo animado
 		System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
-		graph = new MultiGraph(MyModelTest2Appium.class.getSimpleName() + "_" + testName.getMethodName());
+		graph = new MultiGraph(ModeloGrupo8TestAppium.class.getSimpleName() + "_" + testName.getMethodName());
 		graph.display(true);
 		observer = new GraphStreamObserver(graph);
 	}
@@ -70,14 +70,14 @@ public class MyModelTest2Appium {
 	public void afterTest() throws Exception {
 		//Capture screenshot
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("./screenshots/Android_" + MyModelTest2Appium.class.getSimpleName() + "_" + testName.getMethodName()+ ".jpg"));
+        FileUtils.copyFile(scrFile, new File("./screenshots/Android_" + ModeloGrupo8TestAppium.class.getSimpleName() + "_" + testName.getMethodName()+ ".jpg"));
 		//gera screenshot do modelo animado
 		FileSinkImages pic = new FileSinkImages(OutputType.JPG, Resolutions.HD720);
 		pic.setLayoutPolicy(LayoutPolicy.COMPUTED_FULLY_AT_NEW_IMAGE);
 		pic.setRenderer(RendererType.SCALA);
 		pic.stabilizeLayout(1);
 		pic.setAutofit(true);
-		pic.writeAll(graph, "screenshots/Graph_" + MyModelTest2Appium.class.getSimpleName() + "_" + testName.getMethodName() + ".jpg");
+		pic.writeAll(graph, "screenshots/Graph_" + ModeloGrupo8TestAppium.class.getSimpleName() + "_" + testName.getMethodName() + ".jpg");
 	}
 	
 	@BeforeClass

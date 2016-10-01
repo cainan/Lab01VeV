@@ -29,9 +29,9 @@ import br.com.unicamp.inf321.helper.GraphWalkerTestBuilder;
 import br.com.unicamp.inf321.models.bookstore.BookstoreModel;
 import br.com.unicamp.inf321.observers.GraphStreamObserver;
 
-public class MyModelTest {
+public class ModeloGrupo8Test {
 	
-	public final static Path MODEL_PATH = Paths.get("/br/com/unicamp/inf321/ModeloCompleto.graphml");
+	public final static Path MODEL_PATH = Paths.get("/br/com/unicamp/inf321/ModeloGrupo8.graphml");
 	private Observer observer;
 	private Graph graph;
 	
@@ -41,7 +41,7 @@ public class MyModelTest {
 	@Before
 	public void beforeTest() {
 		System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
-		graph = new MultiGraph(MyModelTest.class.getSimpleName() + "_" + testName.getMethodName());
+		graph = new MultiGraph(ModeloGrupo8Test.class.getSimpleName() + "_" + testName.getMethodName());
 		graph.display(true);
 		observer = new GraphStreamObserver(graph);
 	}
@@ -53,7 +53,7 @@ public class MyModelTest {
 		pic.setRenderer(RendererType.SCALA);
 		pic.stabilizeLayout(1);
 		pic.setAutofit(true);
-		pic.writeAll(graph, "screenshots/" + MyModelTest.class.getSimpleName() + "_graphstream_" + testName.getMethodName() + ".jpg");
+		pic.writeAll(graph, "screenshots/" + ModeloGrupo8Test.class.getSimpleName() + "_graphstream_" + testName.getMethodName() + ".jpg");
 	}
 	
 	@Test
