@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import br.com.unicamp.inf321.ModeloGrupo8;
 import io.appium.java_client.android.AndroidDriver;
 
+
 public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	private AndroidDriver<WebElement> driver;

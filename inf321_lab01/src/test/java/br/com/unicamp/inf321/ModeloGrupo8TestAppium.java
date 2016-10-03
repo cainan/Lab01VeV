@@ -52,12 +52,12 @@ public class ModeloGrupo8TestAppium {
 
 	@Rule
 	public TestName testName = new TestName();
-	
+
 	@Before
 	public void beforeTest() {
 		// fecha aplicativo antes de cada teste
 		driver.closeApp();
-		//reseta aplicativo antes de cada teste
+		// reseta aplicativo antes de cada teste
 		driver.resetApp();
 		// cria observer para habilitar execução do modelo animado
 		System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
@@ -68,21 +68,23 @@ public class ModeloGrupo8TestAppium {
 
 	@After
 	public void afterTest() throws Exception {
-		//Capture screenshot
+		// Capture screenshot
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("./screenshots/Android_" + ModeloGrupo8TestAppium.class.getSimpleName() + "_" + testName.getMethodName()+ ".jpg"));
-		//gera screenshot do modelo animado
+		FileUtils.copyFile(scrFile, new File("./screenshots/Android_" + ModeloGrupo8TestAppium.class.getSimpleName()
+				+ "_" + testName.getMethodName() + ".jpg"));
+		// gera screenshot do modelo animado
 		FileSinkImages pic = new FileSinkImages(OutputType.JPG, Resolutions.HD720);
 		pic.setLayoutPolicy(LayoutPolicy.COMPUTED_FULLY_AT_NEW_IMAGE);
 		pic.setRenderer(RendererType.SCALA);
 		pic.stabilizeLayout(1);
 		pic.setAutofit(true);
-		pic.writeAll(graph, "screenshots/Graph_" + ModeloGrupo8TestAppium.class.getSimpleName() + "_" + testName.getMethodName() + ".jpg");
+		pic.writeAll(graph, "screenshots/Graph_" + ModeloGrupo8TestAppium.class.getSimpleName() + "_"
+				+ testName.getMethodName() + ".jpg");
 	}
-	
+
 	@BeforeClass
 	public static void setup() {
-		//seta os capabilities do android driver 
+		// seta os capabilities do android driver
 		File classpathRoot = new File(System.getProperty("user.dir"));
 		File appDir = new File(classpathRoot, "src/main/resources");
 		File app = new File(appDir, "Bookstore.apk");
@@ -93,14 +95,43 @@ public class ModeloGrupo8TestAppium {
 		capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.marvelapp.project860015");
 		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".BookstoreActivity");
 		capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, "true");
-		capabilities.setCapability(AndroidMobileCapabilityType.UNICODE_KEYBOARD, "true"); //disable soft keyboard
+		capabilities.setCapability(AndroidMobileCapabilityType.UNICODE_KEYBOARD, "true"); // disable
+																							// soft
+																							// keyboard
 		try {
-			driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities); //inicia android driver passando url do server do appium
+			driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities); // inicia
+																									// android
+																									// driver
+																									// passando
+																									// url
+																									// do
+																									// server
+																									// do
+																									// appium
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		driver.rotate(ScreenOrientation.LANDSCAPE); //rotaciona tela
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //seta timeout implicito (sempre vai esperar no minimo 5 segundos pelo elemento na tela)
+		driver.rotate(ScreenOrientation.LANDSCAPE); // rotaciona tela
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // seta
+																			// timeout
+																			// implicito
+																			// (sempre
+																			// vai
+																			// esperar
+																			// no
+																			// minimo
+																			// 5
+																			// segundos
+																			// pelo
+																			// elemento
+																			// na
+																			// tela)
+        try {
+        	TimeUnit.SECONDS.sleep(20);
+        } catch (InterruptedException e) {
+        	// 	TODO Auto-generated catch block
+        	e.printStackTrace();
+        }
 	}
 
 	@AfterClass
@@ -114,32 +145,36 @@ public class ModeloGrupo8TestAppium {
 		cp.addPathGenerator(new AStarPath(new ReachedEdge("e_init")));
 		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_Home")));
 		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_PagamentoFinalizado")));
-		
-		Result result = new GraphWalkerTestBuilder()
-				.addModel(MODEL_PATH,
-						cp, new BookstoreModel(driver))
-				.addObserver(observer) //adicona observer para ver execução do modelo animada
+
+		Result result = new GraphWalkerTestBuilder().addModel(MODEL_PATH, cp, new BookstoreModel(driver))
+				.addObserver(observer) // adicona observer para ver execução do
+										// modelo animada
 				.execute(true);
-		Assertions.assertThat(result.getErrors()).as("Errors: [" + String.join(", ", result.getErrors()) + "]").isNullOrEmpty();
+		Assertions.assertThat(result.getErrors()).as("Errors: [" + String.join(", ", result.getErrors()) + "]")
+				.isNullOrEmpty();
 	}
-	
+
 	@Test
 	public void runStabilityTest() {
 		Result result = new GraphWalkerTestBuilder()
-				.addModel(MODEL_PATH,
-						new RandomPath(new TimeDuration(60, TimeUnit.SECONDS)), "e_init", new BookstoreModel(driver))
-				.addObserver(observer) //adicona observer para ver execução do modelo animada
+				.addModel(MODEL_PATH, new RandomPath(new TimeDuration(60, TimeUnit.SECONDS)), "e_init",
+						new BookstoreModel(driver))
+				.addObserver(observer) // adicona observer para ver execução do
+										// modelo animada
 				.execute(true);
-		Assertions.assertThat(result.getErrors()).as("Errors: [" + String.join(", ", result.getErrors()) + "]").isNullOrEmpty();
+		Assertions.assertThat(result.getErrors()).as("Errors: [" + String.join(", ", result.getErrors()) + "]")
+				.isNullOrEmpty();
 	}
 
 	@Test
 	public void runFunctionalTest() {
 		Result result = new GraphWalkerTestBuilder()
-				.addModel(MODEL_PATH, new RandomPath(new EdgeCoverage(100)), "e_init", new BookstoreModel(driver))
-				.addObserver(observer) //adicona observer para ver execução do modelo animada
+				.addModel(MODEL_PATH, new RandomPath(new EdgeCoverage(100)), "e_Init", new BookstoreModel(driver))
+				.addObserver(observer) // adicona observer para ver execução do
+										// modelo animada
 				.execute(true);
-		Assertions.assertThat(result.getErrors()).as("Errors: [" + String.join(", ", result.getErrors()) + "]").isNullOrEmpty();
+		Assertions.assertThat(result.getErrors()).as("Errors: [" + String.join(", ", result.getErrors()) + "]")
+				.isNullOrEmpty();
 	}
 
 }
