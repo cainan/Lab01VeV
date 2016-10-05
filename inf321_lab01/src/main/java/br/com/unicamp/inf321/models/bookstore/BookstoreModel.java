@@ -1,13 +1,18 @@
 package br.com.unicamp.inf321.models.bookstore;
 
 import org.graphwalker.core.machine.ExecutionContext;
+import org.graphwalker.java.annotation.GraphWalker;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.unicamp.inf321.ModeloGrupo8;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 
-
+@GraphWalker(value = "random(edge_coverage(100))", start = "v_Home")
 public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	private AndroidDriver<WebElement> driver;
@@ -48,7 +53,11 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	@Override
 	public void e_finalizarCompra() {
-		// TODO Auto-generated method stub
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
+		TouchAction touchAction = new TouchAction(driver);
+		touchAction.press(1000,600).perform();
+    	touchAction.moveTo(0,50).perform();
+    	touchAction.tap(1072, 365).perform();
 
 	}
 
@@ -96,8 +105,6 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	@Override
 	public void v_Home() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -144,8 +151,19 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	@Override
 	public void e_pesquisar() {
-		// TODO Auto-generated method stub
-
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
+		TouchAction touchAction = new TouchAction(driver);
+    	touchAction.tap(285, 229).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+  
+    	touchAction.tap(285, 229).perform();
+    	touchAction.tap(1138, 216).perform();
+    	touchAction.tap(188, 640).perform();
 	}
 
 	@Override
@@ -156,13 +174,15 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	@Override
 	public void e_finalizarComCartao() {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void e_selecionar() {
-		// TODO Auto-generated method stub
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
+		TouchAction touchAction = new TouchAction(driver);
+    	touchAction.tap(837, 558).perform();
 
 	}
 
@@ -186,8 +206,9 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	@Override
 	public void e_voltarHome() {
-		// TODO Auto-generated method stub
-
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
+//		TouchAction touchAction = new TouchAction(driver);
+//		touchAction.tap(60, 86).perform();
 	}
 
 	@Override
@@ -210,13 +231,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	@Override
 	public void e_voltar() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void e_Init() {
-		// TODO Auto-generated method stub
+		System.out.println("Teste");
 
 	}
 

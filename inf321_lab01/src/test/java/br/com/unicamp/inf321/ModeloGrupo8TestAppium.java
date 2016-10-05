@@ -142,8 +142,13 @@ public class ModeloGrupo8TestAppium {
 	@Test
 	public void runSmokeTest() {
 		CombinedPath cp = new CombinedPath();
-		cp.addPathGenerator(new AStarPath(new ReachedEdge("e_init")));
-		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_Home")));
+		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_ErroTexto")));
+		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_ListaProdutos")));
+		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_Carrinho")));
+		cp.addPathGenerator(new AStarPath(new ReachedEdge("e_finalizarCompra")));
+		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_RealizarLogin")));
+		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_SelecaoDeEndereco")));
+		cp.addPathGenerator(new AStarPath(new ReachedEdge("e_concluirCompra")));
 		cp.addPathGenerator(new AStarPath(new ReachedVertex("v_PagamentoFinalizado")));
 
 		Result result = new GraphWalkerTestBuilder().addModel(MODEL_PATH, cp, new BookstoreModel(driver))
@@ -157,7 +162,7 @@ public class ModeloGrupo8TestAppium {
 	@Test
 	public void runStabilityTest() {
 		Result result = new GraphWalkerTestBuilder()
-				.addModel(MODEL_PATH, new RandomPath(new TimeDuration(60, TimeUnit.SECONDS)), "e_init",
+				.addModel(MODEL_PATH, new RandomPath(new TimeDuration(120, TimeUnit.SECONDS)), "e_Init",
 						new BookstoreModel(driver))
 				.addObserver(observer) // adicona observer para ver execução do
 										// modelo animada
