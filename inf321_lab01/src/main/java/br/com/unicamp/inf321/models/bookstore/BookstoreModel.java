@@ -1,3 +1,10 @@
+//Componentes do Grupo 8:
+//Jaqueline Ramos Rodrigues -------- 100,00%
+//Jorge Pedro Neto ----------------- 100,00%
+//Pedro Henrique Grandin ----------- 100,00%
+//Leonardo Lucas Lana -------------- 100,00%
+//Cainã Santos de Oliveira --------- 100,00%
+
 package br.com.unicamp.inf321.models.bookstore;
 
 import org.graphwalker.core.machine.ExecutionContext;
