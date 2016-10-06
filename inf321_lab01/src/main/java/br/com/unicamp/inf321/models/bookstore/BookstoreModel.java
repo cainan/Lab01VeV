@@ -37,8 +37,15 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	@Override
 	public void e_finalizarComBoleto() {
-		// TODO Auto-generated method stub
-
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
+		TouchAction touchAction = new TouchAction(driver);
+    	touchAction.tap(1072, 365).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -54,6 +61,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1072, 365).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -62,6 +75,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1072, 365).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -88,6 +107,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1072, 365).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -103,6 +128,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(215,600).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -111,6 +142,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(215,600).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -151,6 +188,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(700, 464).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -167,6 +210,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1072, 365).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -182,6 +231,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(215,600).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -190,6 +245,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1072, 365).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -223,7 +284,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1072, 365).perform();
-
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -231,6 +297,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1072, 365).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -239,7 +311,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(837, 558).perform();
-
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -270,6 +347,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1072, 365).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -286,6 +369,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(1000, 510).perform();
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -338,6 +427,12 @@ public class BookstoreModel extends ExecutionContext implements ModeloGrupo8 {
 
 	@Override
 	public void e_pesquisar_texto_nao_achou() {
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("android.widget.Image")));
 		TouchAction touchAction = new TouchAction(driver);
     	touchAction.tap(105, 70).perform();
